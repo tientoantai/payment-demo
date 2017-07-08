@@ -2,6 +2,7 @@
 
 namespace PaymentMethod;
 
+use Payment\Payment;
 
 class BankTransfer implements PaymentMethod
 {
