@@ -13,7 +13,7 @@ class PaymentMethodProvider
      */
     public function provide($paymentMethodIdentifier)
     {
-        //TODO - this function should return a PaymentMethod Instance
+        //TODO - this function should return a PaymentMethod Instance somehow
     }
 
     /**
@@ -22,6 +22,6 @@ class PaymentMethodProvider
      */
     public function provideMany($paymentMethodIdentifierList)
     {
-        //TODO - this function should return an array of PaymentMethod Instances
+        //TODO - this function should return an array of PaymentMethod Instances somehow
     }
 }
