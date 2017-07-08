@@ -3,14 +3,38 @@
 namespace PaymentMethod;
 
 
+use Bill\Bill;
+use Payment\Payment;
+
 abstract class PaymentMethod
 {
     /**
-     * @var Commission
+     * @var Commission[]
      */
-    protected $commission;
+    protected $commissions;
 
-    function process(){
+    public function __construct($commissions)
+    {
+        $this->commissions = $commissions;
+    }
 
+    /**
+     * @param $bill
+     * @return Payment
+     */
+    function process($bill){
+
+    }
+
+    /**
+     * @param Bill $bill
+     * @return float
+     */
+    protected function getCommissionsAmount($bill){
+        $total = 0;
+        foreach ($this->commissions as $commission){
+            $total += $commission->getCommission($bill);
+        }
+        return $total;
     }
 }
