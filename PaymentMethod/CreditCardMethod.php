@@ -3,7 +3,7 @@
 namespace PaymentMethod;
 
 
-class CreditCardMethod implements PaymentMethod
+class CreditCardMethod extends PaymentMethod
 {
 
     /**

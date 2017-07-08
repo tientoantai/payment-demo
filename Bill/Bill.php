@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-namespace Payment;
+namespace Bill;
 
 use User\User;
 
-class Payment{
-
+class Bill
+{
     /**
      * @var float
      */
@@ -15,21 +15,6 @@ class Payment{
      * @var string
      */
     private $currency;
-
-    /**
-     * @var PaymentMethod
-     */
-    private $method;
-
-    /**
-     * @var User
-     */
-    private $payer;
-
-    /**
-     * @var float
-     */
-    private $sum;
 
     /**
      * @return float
@@ -64,22 +49,6 @@ class Payment{
     }
 
     /**
-     * @return PaymentMethod
-     */
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    /**
-     * @param PaymentMethod $method
-     */
-    public function setMethod($method)
-    {
-        $this->method = $method;
-    }
-
-    /**
      * @return User
      */
     public function getPayer()
@@ -96,20 +65,7 @@ class Payment{
     }
 
     /**
-     * @return float
+     * @var User
      */
-    public function getSum()
-    {
-        return $this->sum;
-    }
-
-    /**
-     * @param float $sum
-     */
-    public function setSum($sum)
-    {
-        $this->sum = $sum;
-    }
-
-
+    private $payer;
 }

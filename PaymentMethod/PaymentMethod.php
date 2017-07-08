@@ -3,7 +3,14 @@
 namespace PaymentMethod;
 
 
-interface PaymentMethod
+abstract class PaymentMethod
 {
-    function process();
+    /**
+     * @var Commission
+     */
+    protected $commission;
+
+    function process(){
+
+    }
 }
