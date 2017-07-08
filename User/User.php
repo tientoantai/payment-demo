@@ -1,30 +1,32 @@
 <?php
 namespace User;
 
-use Payment\PaymentMethod;
+use PaymentMethod\PaymentMethod;
 
 class User
 {
 
     private $id;
     /**
-     * @var string[]
+     * @var PaymentMethod[]
      */
     protected $availablePaymentMethod;
 
-    public function __construct()
+    /**
+     * @param PaymentMethod[] $paymentMethods
+     */
+    public function bindPaymentMethods($paymentMethods)
     {
-
+        array_merge($this->availablePaymentMethod, $paymentMethods);
     }
 
-    public function bindPaymentMethod($paymentMethodName)
+    /**
+     * @param $paymentMethod
+     * @throws \Exception
+     */
+    public function unbindPaymentMethod($paymentMethod)
     {
-        array_push($this->availablePaymentMethod, $paymentMethodName);
-    }
-
-    public function unbindPaymentMethod($paymentMethodName)
-    {
-        if(($key = array_search($paymentMethodName, $this->availablePaymentMethod)) !== false) {
+        if(($key = array_search($paymentMethod, $this->availablePaymentMethod)) !== false) {
             unset($this->availablePaymentMethod[$key]);
         }else{
             throw new \Exception("Can not unbind this method");
