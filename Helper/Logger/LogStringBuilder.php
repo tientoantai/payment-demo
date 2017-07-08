@@ -30,6 +30,10 @@ class LogStringBuilder
         return $logString;
     }
 
+    /**
+     * @param PaymentMethod $paymentMethod
+     * @return string
+     */
     public function buildUnBindMethodLog($paymentMethod)
     {
         //TODO
