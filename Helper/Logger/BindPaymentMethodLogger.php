@@ -3,13 +3,30 @@
 namespace Helper\Logger;
 
 
+use PaymentMethod\PaymentMethod;
+
 class BindPaymentMethodLogger
 {
     /**
-     * @param $logString
+     * @var LogStringBuilder
      */
-    public function writeLog($logString)
+    protected $builder;
+
+    /**
+     * BindPaymentMethodLogger constructor.
+     * @param $builder
+     */
+    public function __construct($builder)
     {
-        
+        $this->builder = $builder;
+    }
+
+    /**
+     * @param PaymentMethod[] $paymentMethods
+     */
+    public function writeLog($paymentMethods)
+    {
+        $logString = $this->builder->buildUnBindMethodLog($paymentMethods);
+        //TODO write $logString to file
     }
 }

@@ -8,10 +8,25 @@ use Payment\Payment;
 class PaymentLogger implements Logger
 {
     /**
-     * @param $logString
+     * @var LogStringBuilder
      */
-    public function writeLog($logString)
+    protected $builder;
+
+    /**
+     * PaymentLogger constructor.
+     * @param $builder
+     */
+    public function __construct($builder)
     {
-        //TODO
+        $this->builder = $builder;
+    }
+
+    /**
+     * @param $payment
+     */
+    public function writeLog($payment)
+    {
+        $logString = $this->builder->buildPaymentLog($payment);
+        //TODO write $logString to file
     }
 }
