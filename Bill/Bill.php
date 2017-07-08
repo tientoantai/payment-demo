@@ -17,6 +17,11 @@ class Bill
     private $currency;
 
     /**
+     * @var User
+     */
+    private $payer;
+    
+    /**
      * @return float
      */
     public function getAmount()
@@ -63,9 +68,4 @@ class Bill
     {
         $this->payer = $payer;
     }
-
-    /**
-     * @var User
-     */
-    private $payer;
 }
