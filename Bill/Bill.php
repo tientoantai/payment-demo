@@ -20,21 +20,13 @@ class Bill
      * @var User
      */
     private $payer;
-    
+
     /**
      * @return float
      */
     public function getAmount()
     {
         return $this->amount;
-    }
-
-    /**
-     * @param float $amount
-     */
-    public function setAmount($amount)
-    {
-        $this->amount = $amount;
     }
 
     /**
@@ -46,14 +38,6 @@ class Bill
     }
 
     /**
-     * @param string $currency
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
-    }
-
-    /**
      * @return User
      */
     public function getPayer()
@@ -61,11 +45,4 @@ class Bill
         return $this->payer;
     }
 
-    /**
-     * @param User $payer
-     */
-    public function setPayer($payer)
-    {
-        $this->payer = $payer;
-    }
 }
