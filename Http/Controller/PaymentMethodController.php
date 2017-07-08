@@ -38,7 +38,7 @@ class PaymentMethodController
         $paymentMethods = $this->paymentMethodProvider->provideMany($methodIdentifierList);
         $user = $this->userProvider->provide($userIdentifier);
         $user->bindPaymentMethods($paymentMethods);
-        //TODO - something to finish this action
+        //TODO - something to finish action like response or write log
     }
 
     /**
@@ -50,6 +50,6 @@ class PaymentMethodController
         $paymentMethod = $this->paymentMethodProvider->provide($methodIdentifier);
         $user = $this->userProvider->provide($userIdentifier);
         $user->unbindPaymentMethod($paymentMethod);
-        //TODO - something to finish this action
+        //TODO - something to finish action like response or write log
     }
 }

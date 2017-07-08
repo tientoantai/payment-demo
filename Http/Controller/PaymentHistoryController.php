@@ -26,6 +26,7 @@ class PaymentHistoryController
     {
         //condition can be provide in a middleware
         $this->paymentHistoryFinder->find($condition);
-        //TODO - something to finish action
+        //TODO - something to finish action like response or write log
+
     }
 }
