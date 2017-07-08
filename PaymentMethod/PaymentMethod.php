@@ -30,10 +30,10 @@ abstract class PaymentMethod
      * @param Bill $bill
      * @return float
      */
-    protected function getCommissionsAmount($bill){
+    protected function getTotalCommissionsAmount($bill){
         $total = 0;
         foreach ($this->commissions as $commission){
-            $total += $commission->getCommission($bill);
+            $total += $commission->getCommissionsAmount($bill);
         }
         return $total;
     }
