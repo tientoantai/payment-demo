@@ -26,7 +26,7 @@ class User
      */
     public function unbindPaymentMethod($paymentMethod)
     {
-        if(($key = array_search($paymentMethod, $this->availablePaymentMethod)) !== false) {
+        if(($key = array_search($paymentMethod, $this->availablePaymentMethods)) !== false) {
             unset($this->availablePaymentMethods[$key]);
         }else{
             throw new \Exception("Can not unbind this method");
