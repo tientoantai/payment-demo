@@ -10,14 +10,14 @@ class User
     /**
      * @var PaymentMethod[]
      */
-    protected $availablePaymentMethod;
+    protected $availablePaymentMethods;
 
     /**
      * @param PaymentMethod[] $paymentMethods
      */
     public function bindPaymentMethods($paymentMethods)
     {
-        array_merge($this->availablePaymentMethod, $paymentMethods);
+        array_merge($this->availablePaymentMethods, $paymentMethods);
     }
 
     /**
@@ -27,7 +27,7 @@ class User
     public function unbindPaymentMethod($paymentMethod)
     {
         if(($key = array_search($paymentMethod, $this->availablePaymentMethod)) !== false) {
-            unset($this->availablePaymentMethod[$key]);
+            unset($this->availablePaymentMethods[$key]);
         }else{
             throw new \Exception("Can not unbind this method");
         }
