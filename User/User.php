@@ -6,7 +6,7 @@ use PaymentMethod\PaymentMethod;
 class User
 {
 
-    private $id;
+    protected $id;
     /**
      * @var PaymentMethod[]
      */
