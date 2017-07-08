@@ -2,6 +2,7 @@
 
 namespace Payment;
 
+use Bill\Bill;
 use PaymentMethod\PaymentMethod;
 
 class Payment{
@@ -10,6 +11,27 @@ class Payment{
      * @var PaymentMethod
      */
     private $method;
+
+    /**
+     * @return Bill
+     */
+    public function getBill()
+    {
+        return $this->bill;
+    }
+
+    /**
+     * @param Bill $bill
+     */
+    public function setBill($bill)
+    {
+        $this->bill = $bill;
+    }
+
+    /**
+     * @var Bill
+     */
+    private $bill;
 
     /**
      * @var float
