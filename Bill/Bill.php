@@ -45,4 +45,37 @@ class Bill
         return $this->payer;
     }
 
+    /**
+     * @param float $amount
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * @param string $currency
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+        return $this;
+    }
+
+    /**
+     * @param User $payer
+     * @return self
+     */
+    public function setPayer($payer)
+    {
+        $this->payer = $payer;
+        return $this;
+    }
+
+
+    
+
 }
