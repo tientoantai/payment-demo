@@ -8,6 +8,10 @@ use Payment\Payment;
 class BankTransferMethod extends PaymentMethod
 {
 
+    /**
+     * @param Bill $bill
+     * @return Payment
+     */
     function process($bill)
     {
         $payment = new Payment($bill, $this);
