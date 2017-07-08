@@ -1,6 +1,6 @@
 <?php
 
-namespace Payment;
+namespace PaymentMethod;
 
 
 class BankTransfer implements PaymentMethod
