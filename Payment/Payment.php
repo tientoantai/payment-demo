@@ -13,22 +13,6 @@ class Payment{
     private $method;
 
     /**
-     * @return Bill
-     */
-    public function getBill()
-    {
-        return $this->bill;
-    }
-
-    /**
-     * @param Bill $bill
-     */
-    public function setBill($bill)
-    {
-        $this->bill = $bill;
-    }
-
-    /**
      * @var Bill
      */
     private $bill;
@@ -37,6 +21,19 @@ class Payment{
      * @var float
      */
     private $sum;
+
+    public function __construct($bill, $method)
+    {
+        $this->bill   = $bill;
+        $this->method = $method;
+    }
+    /**
+     * @return Bill
+     */
+    public function getBill()
+    {
+        return $this->bill;
+    }
 
     /**
      * @return PaymentMethod
@@ -47,14 +44,6 @@ class Payment{
     }
 
     /**
-     * @param PaymentMethod $method
-     */
-    public function setMethod($method)
-    {
-        $this->method = $method;
-    }
-
-    /**
      * @return float
      */
     public function getSum()
@@ -62,10 +51,14 @@ class Payment{
         return $this->sum;
     }
 
-
-    public function setSum()
+    /**
+     * @param $sum
+     * @return self
+     */
+    public function setSum($sum)
     {
-
+        $this->sum = $sum;
+        return $this;
     }
 
 
